@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crear Anotacion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-select [(ngModel)]="notifications"  interface="action-sheet">
+        <ion-option *ngFor="let item of items" value="{{item.title}}">{{item.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    
+  </ion-list>
+  <ion-item>
+    <button ion-button>Guardar</button>
+  </ion-item>
+</ion-content>
