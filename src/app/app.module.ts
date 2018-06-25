@@ -12,18 +12,24 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CrearanotacionPageModule } from '../pages/crearanotacion/crearanotacion.module';
 import { CrearanotacionProvider } from '../providers/crearanotacion/crearanotacion';
+import { Anotaciones } from '../models/Anotaciones';
+import { HttpClientModule } from '@angular/common/http';
+import { ConsultaranotacionProvider } from '../providers/consultaranotacion/consultaranotacion';
+import { ResultadosanotacionPage } from '../pages/resultadosanotacion/resultadosanotacion';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    AnotacionesPage
+    AnotacionesPage,
+    ResultadosanotacionPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CrearanotacionPageModule
+    CrearanotacionPageModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,13 +37,17 @@ import { CrearanotacionProvider } from '../providers/crearanotacion/crearanotaci
     HomePage,
     ListPage,
     AnotacionesPage,
-    CrearanotacionPage
+    CrearanotacionPage,
+    ResultadosanotacionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Anotaciones,
+    HttpClientModule,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    CrearanotacionProvider
+    CrearanotacionProvider,
+    ConsultaranotacionProvider
   ]
 })
 export class AppModule { }

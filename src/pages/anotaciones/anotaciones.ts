@@ -20,13 +20,10 @@ export class AnotacionesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.selectedItem = navParams.get('item');
 
-    this.items = [];
-
-    this.items.push({
-      title: 'Crear Anotacion',
-      idPage: 'CrearanotacionPage'
-    });
-
+    this.items = [
+      { title: 'Crear Anotacion', idPage: 'CrearanotacionPage' },
+      { title: 'Consultar Anotacion', idPage: 'ConsultaranotacionPage' }
+    ];
   }
 
   itemTapped(event, item) {

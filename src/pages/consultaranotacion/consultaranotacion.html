@@ -3,26 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Crear Anotacion</ion-title>
+    <ion-title>Consultar Anotacion</ion-title>
   </ion-navbar>
 </ion-header>
+
 
 
 <ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label>Proyecto</ion-label>
-      <ion-select [(ngModel)]="notifications"  interface="action-sheet">
-        <ion-option *ngFor="let item of items" value="{{item.title}}">{{item.title}}</ion-option>
+      <ion-select [(ngModel)]="project" interface="action-sheet">
+        <ion-option *ngFor="let item of proyectos" value="{{item.Nombre}}">{{item.Nombre}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label fixed >Anotacion</ion-label>
+      <ion-label fixed>Anotacion</ion-label>
       <ion-input [(ngModel)]="anotacion" type="text" value=""></ion-input>
     </ion-item>
-    
   </ion-list>
   <ion-item>
-    <button ion-button (click)="guardar();">Guardar</button>
+    <button ion-button (click)="buscar();">Buscar</button>
   </ion-item>
 </ion-content>
